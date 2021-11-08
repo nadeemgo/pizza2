@@ -1,0 +1,17 @@
+nav {
+    background-color: lightblue;
+}
+
+section.menu {
+    background: #f9f9f9;
+}
+
+.card {
+    min-width: 160px;
+}
+
+@media (max-width: 800px) {
+    .menucontainer {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}

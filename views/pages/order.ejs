@@ -1,0 +1,75 @@
+<section id='ordersection' data-order='<%= JSON.stringify(order) %>'>
+    <div class='container mx-auto mt-5'>
+        <div class='flex justify-between items-center'>
+            <h2 id='totalorders' class='font-bold text-lg  px-6 py-4 '>Total orders:
+                <%= orderlength %>
+            </h2>
+
+            <h6 class='font-bold text-sm  px-6 py-2'>
+                <%= user.username %>
+            </h6>
+        </div>
+
+        <% if(messages.success){ %>
+            <div id='flash-order' class='bg-green-200 w-full'>
+                <%= messages.success  %>
+            </div>
+            <% } %>
+
+                <table class=' w-full text-left'>
+                    <thead>
+                        <tr class=>
+                            <th class='  px-4 py-2'> order</th>
+                            <th class='  px-4 py-2'> address</th>
+                            <th class='  px-4 py-2'> phone</th>
+                            <th class='  px-4 py-2'> total</th>
+                            <th class='  px-4 py-2'> time</th>
+                        </tr>
+                    </thead>
+                    <% if(order){ %>
+                        <tbody id='tbody'>
+                            <% order.map(ele =>{ %>
+                                <div id='orderlist'>
+                                    <tr>
+                                        <td class=' bordercell px-4 py-2'>
+                                            <a href='/orderstatus/<%= ele._id  %>' data-id='<%= ele._id  %>'>
+                                                <%= ele._id  %>
+                                            </a>
+                                        </td>
+                                        <td class=' bordercell px-4 py-2'>
+                                            <%= ele.address  %>
+                                        </td>
+                                        <td class=' bordercell px-4 py-2'>
+                                            <%= ele.phone  %>
+                                        </td>
+                                        <td class=' bordercell px-4 py-2'>
+                                            <%= ele.cart.totalprice  %>
+                                        </td>
+                                        <td class='  bordercell px-4 py-2'>
+                                            <%= moment(ele.createdAt).format('hh:mm A')  %>
+                                        </td>
+                                    </tr>
+                                </div>
+                                <% }) %>
+                        </tbody id='tbody'>
+                        <% }else{ %>
+                            <tbody>
+
+
+                                <tr>
+                                    <td class='  bordercell px-4 py-2'>
+                                        No orders found
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                            <% } %>
+                </table>
+    </div>
+</section>
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src='/js/order.js'></script>

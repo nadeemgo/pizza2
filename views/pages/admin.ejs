@@ -1,0 +1,72 @@
+<section class='mt-8 mb-4'>
+    <div class='container mx-auto '>
+        <div class='flex justify-between'>
+            <div class='flex justify-start'>
+                <h1 class='text-lg font-bold mb-4 mr-4'>Total Orders</h1>
+                <span class='font-bold'><%= order.length %></span>
+            </div>
+            <div class='font-bold'>Admin</div>
+        </div>
+
+        <div id='orderjason' data-order='<%= JSON.stringify(order)  %>'> </div>
+
+        <table class='w-full'>
+            <thead>
+                <th>Order</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Status</th>
+                <th>Time</th>
+            </thead>
+            <tbody id='tbody' class='px-2'>
+
+                <% order.map(ele=>{ %>
+
+                    <form action='/adminupdateorderstatus' method='POST'>
+                        <input type='hidden' value='<%= ele._id %>' name='orderid'>
+                        <tr>
+                            <td class='border-2 border-solid border-gray-300 px-2 py-2'>
+                                <%= ele._id %>
+
+                                    <%  Object.values(ele.cart.items).map(singprod=>{ %>
+                                        <br>
+                                        <span><%= singprod.name %>: </span>
+                                        <span><%= singprod.qty %> - pcs </span>
+                                        <% }) %>
+
+                            </td>
+                            <td class='border-2 border-solid border-gray-300  px-2 py-2'>
+                                <%= ele.phone %>
+                            </td>
+                            <td class='border-2 border-solid border-gray-300  px-2 py-2'>
+                                <%= ele.address %>
+                            </td>
+                            <td class='border-2 border-solid border-gray-300  px-2 py-2'>
+
+                                <select id='selectvalue' name='selectvalue' onchange='this.form.submit()' class='orderstatus w-full focus:none' data-id='<%= ele._id %>'>
+                                <option value='order-placed' <%= ele.status == 'order-placed' ? 'selected' : '' ;%> >order placed</option>
+                                <option value='confirmed' <%= ele.status == 'confirmed' ? 'selected' : '' ;%>    >confirmed</option>
+                                <option value='prepared' <%= ele.status == 'prepared' ? 'selected' : '' ;%>    >prepared</option>
+                                <option value='delievered' <%= ele.status == 'delievered' ? 'selected' : '' ;%>  >delievered</option>
+                                <option value='closed' <%= ele.status == 'closed' ? 'selected' : '' ;%>  >closed</option>
+                            </select>
+
+                            </td>
+                            <td class='border-2 border-solid border-gray-300  px-2 py-2'>
+                                <%= moment(ele.createdAt).format('hh:mm A') %>
+                            </td>
+                        </tr>
+
+                    </form>
+
+                    <% }) %>
+
+            </tbody>
+        </table>
+
+    </div>
+</section>
+
+<script src='/socket.io/socket.io.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src='/js/adminorder.js'></script>

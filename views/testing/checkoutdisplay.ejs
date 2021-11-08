@@ -1,0 +1,60 @@
+<section class='checkoutdisplay'>
+    <h2>Checkout display</h2>
+
+    <p class='font-bold ml-auto px-4'>
+        <%= data._id %>
+    </p>
+    <div class="row">
+
+        <div class="col-75">
+            <div class="row">
+
+
+                <div class="col-50 min-max-width">
+                    <h2>Address</h2>
+                    <div class="container">
+                        <p>full name:
+                            <span><%= data.fullname %></span>
+                        </p>
+                        <p>email:
+                            <span><%= data.email %></span>
+                        </p>
+                        <p>address:
+                            <span><%= data.address %></span>
+                        </p>
+                        <p>city:
+                            <span><%= data.city %></span>
+                        </p>
+                        <p>zip:
+                            <span><%= data.zip %></span>
+                        </p>
+                    </div>
+
+                </div>
+                <div class="col-50 min-max-width">
+                    <h2>Credit Card</h2>
+                    <div class="container">
+                        <p>name on card:
+                            <span><%= data.ccname %></span>
+                        </p>
+                        <p>credit cart number:
+                            <span><%= data.ccnumber %></span>
+                        </p>
+                        <p>month expires:
+                            <span><%= data.expmonth %></span>
+                        </p>
+                        <p>year expires:
+                            <span><%= data.expyear %></span>
+                        </p>
+                        <p>security code:
+                            <span><%= data.securitycvv %></span>
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>

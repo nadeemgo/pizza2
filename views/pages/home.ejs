@@ -1,0 +1,72 @@
+<section class='menu py-10'>
+    <div class='container menucontainer mx-auto mt-4 grid grid-cols-4 gap-12 '>
+
+        <% data && data.map(prod=>{ %>
+
+            <div id='<%= prod._id %>' class=' menuwrapper card text-center rounded bg-white p-4'>
+                <div>
+                    <img src='/images/pizza.jpg'>
+                </div>
+                <div>
+                    <h3>
+                        <%= prod.name %>
+                    </h3>
+                    <span>small</span>
+                </div>
+                <div class='flex justify-between items-center'>
+                    <span>$<%= prod.price %>.00</span>
+                    <button class='bg-gray-200 rounded px-2 py-1 ml-4'><span>+</span><span class='addtocartspan' data-product='<%= JSON.stringify(prod) %>'>Add</span></button>
+
+                </div>
+            </div>
+            <%  }) %>
+
+
+                <div class='text-center rounded bg-white p-4'>
+                    <div>
+                        <img src='/images/pizza.jpg'>
+                    </div>
+                    <div>
+                        <h3>Pizza </h3>
+                        <span>small</span>
+                    </div>
+                    <div class='flex justify-between items-center'>
+                        <span>$20.00</span>
+                        <button><span>+</span><span>Add</span></button>
+
+                    </div>
+                </div>
+
+                <div class='text-center rounded bg-white p-4'>
+                    <div>
+                        <img src='/images/pizza.jpg'>
+                    </div>
+                    <div>
+                        <h3>Pizza </h3>
+                        <span>small</span>
+                    </div>
+                    <div class='flex justify-between items-center'>
+                        <span>$20.00</span>
+                        <button><span>+</span><span>Add</span></button>
+
+                    </div>
+                </div>
+
+                <div class='text-center rounded bg-white p-4'>
+                    <div>
+                        <img src='/images/pizza.jpg'>
+                    </div>
+                    <div>
+                        <h3>Pizza </h3>
+                        <span>small</span>
+                    </div>
+                    <div class='flex justify-between items-center'>
+                        <span>$20.00</span>
+                        <button><span>+</span><span>Add</span></button>
+
+                    </div>
+                </div>
+    </div>
+</section>
+
+<script src='/js/home.js'></script>

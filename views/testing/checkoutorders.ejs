@@ -1,0 +1,30 @@
+<section class='checkoutorders'>
+    <h2>Checkout orders</h2>
+    <% data.map(data=>{  %>
+
+        <p class='font-bold ml-auto px-4'>
+            <%= data._id %>
+        </p>
+        <% }) %>
+
+            <h2>Orders</h2>
+            <div class="mx-4 my-4 ">
+                <% data.map(data=>{  %>
+                    <div class="flex justify-between  mx-4 my-2">
+                        <div class='font-bold'>
+                            <a href="/checkoutdisplay/<%= data._id %>"><span><%= data._id %></span></a>
+                        </div>
+                        <div class='font-bold'>
+                            <a href="#"><span><%= data.fullname %></span></a>
+                        </div>
+                        <div class='font-bold'>
+                            <a href="#"><span><%= data.email %></span></a>
+                        </div>
+
+                        <% }) %>
+
+                    </div>
+            </div>
+
+
+</section>

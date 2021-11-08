@@ -1,0 +1,30 @@
+<section>
+    <div class='mt-4 container mx-auto'>
+
+        <div class='mt-4 w-2/3 mx-auto'>
+            <div class='flex justify-between item-center pb-4'>
+                <div>
+                    <h1 class='font-bold text-lg'>Order id</h1>
+                </div>
+                <div><span id='orderstatus' class='font-bold text-sm' data-order='<%= JSON.stringify(order) %>'><%= order.status   %></span></div>
+                <div><span class='font-bold text-sm'><%= order._id   %></span></div>
+            </div>
+
+            <div class='list-wrapper ml-44 mt-20'>
+                <ul class=''>
+                    <li id='placed' class='listdisplay mb-8 ' data-status='order-placed'><span>Order Placed</span></li>
+                    <li id='confirmed' class='listdisplay mb-8 ' data-status='confirmed'><span>Order Confirmed</span>
+                    </li>
+                    <li id='prepared' class='listdisplay mb-8 ' data-status='prepared'><span>Order Prepared</span>
+                    </li>
+                    <li id='delievered' class='listdisplay mb-8' data-status='delievered'><span>Order Delievered</span>
+                    </li>
+                    <li id='completed' class='listdisplay mb-8' data-status='completed'><span>Order Closed</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src='/socket.io/socket.io.js'></script>
+<script src='/js/orderstatus.js'></script>

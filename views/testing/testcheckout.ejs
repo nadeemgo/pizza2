@@ -1,0 +1,114 @@
+<section>
+    <h2>Checkout</h2>
+
+    <p class='font-bold ml-auto px-4'>
+        <%= data._id %>
+    </p>
+    <div class="row">
+
+        <div class="col-75">
+            <form class='checkoutform' action='/checkout' method='POST'>
+                <div class="row">
+
+
+                    <div class="col-50 min-max-width">
+                        <h2>Billing Address</h2>
+                        <div class="container addresswrapper">
+                            <label for="fullname"><i class="fa fa-user mr-1"></i>Full Name</label>
+                            <input type="text" id='fullname' name='fullname' placeholder='<%= data.fullname %>'>
+
+                            <label for="email"><i class="fa fa-envelope mr-1"></i>Email</label>
+                            <input type="text" id='email' name='email' placeholder='<%= data.email %>'>
+
+                            <label for="address"><i class="fa fa-address-card-o mr-1"></i>Address</label>
+                            <input type="text" id='address' name='address' placeholder='<%= data.address %>'>
+
+                            <label for="city"><i class="fa fa-institution mr-1"></i>City</label>
+                            <input type="text" id='city' name='city' placeholder='<%= data.city %>'>
+
+                            <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+                            </label>
+
+                            <div class='row '>
+                                <div class='col-50'>
+                                    <label for="state">State</label>
+                                    <input type="text" id='state' name='state' placeholder='<%= data.state ? data.state : null %>'>
+
+                                </div>
+                                <div class='col-50'>
+                                    <label for="zip">ZIP</label>
+                                    <input type="text" id='zip' name='zip' placeholder='<%= data.zip %>'>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="col-50 min-max-width">
+                        <h2>Credit Card</h2>
+                        <label for="fname">Accepted Cards</label>
+                        <div class="icon-container">
+                            <i class="fa fa-cc-visa" style="color:navy;"></i>
+                            <i class="fa fa-cc-amex" style="color:blue;"></i>
+                            <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                            <i class="fa fa-cc-discover" style="color:orange;"></i>
+                        </div>
+                        <div class="container ccwrapper">
+                            <label for="ccname">Name on Card</label>
+                            <input type="text" id='ccname' name='ccname' placeholder='<%= data.ccname %>'>
+
+                            <label for="ccnumber">Card Number</label>
+                            <input type="text" id='ccnumber' name='ccnumber' placeholder='<%= data.ccnumber %>'>
+
+                            <label for="expmonth">Exp Month</label>
+                            <input type="text" id='expmonth' name='expmonth' placeholder='<%= data.expmonth %>'>
+                            <div class='row '>
+                                <div class='col-50'>
+                                    <label for="expyear">Exp Year</label>
+                                    <input type="text" id='expyear' name='expyear' placeholder='<%= data.expyear %>'>
+                                </div>
+                                <div class='col-50'>
+                                    <label for="security">CVV</label>
+                                    <input type="text" id='security' name='securitycvv' placeholder='<%= data.securitycvv %>'>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+                </div>
+                <div class='flex mx-4 my-2'>
+                    <button class='btn' type='submit'>Submit</button>
+
+                </div>
+
+            </form>
+        </div>
+
+        <div class="col-25 min-max-cart">
+            <div class="container">
+                <h4 class='font-bold'>Cart
+                    <span class="price" style="color:black">
+                            <i class="fa fa-shopping-cart"></i>
+                                <b>4</b>
+                        </span>
+                </h4>
+                <hr>
+
+                <p><a href="#">Product 1</a> <span class="price">$15</span></p>
+                <p><a href="#">Product 2</a> <span class="price">$5</span></p>
+                <p><a href="#">Product 3</a> <span class="price">$8</span></p>
+                <p><a href="#">Product 4</a> <span class="price">$2</span></p>
+                <hr>
+                <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
+            </div>
+        </div>
+
+
+    </div>
+</section>
