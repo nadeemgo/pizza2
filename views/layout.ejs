@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href='/css/app.css' rel="stylesheet">
+    <link href='/css/home.css' rel="stylesheet">
 </head>
 
 <body class='bg-gray-200 '>
@@ -60,20 +61,20 @@
                         </div>
             </div>
     </nav>
-    <div class='flex justify-center items-center w-full p-3 my-6 '>
-        <div class='w-1/2 border-2 border-blue-400 p-3'>
+    <div class='flex justify-center items-center w-full p-3 my-6 carddiv'>
+        <div class='w-1/2 border-2 border-blue-400 p-3 cardele'>
             <div id='card-element'></div>
         </div>
 
     </div>
-    <div class='container mx-auto py-3 px-7'>
-        <button class='btn btn-primary' id='purchasehandler'>
+    <div class='container mx-auto py-3 px-7 purchasediv'>
+        <button class='btn btn-primary' id='purchasehandler purchaseele'>
             <div class="spinner hidden" id="spinner"></div>
             Purchase
         </button>
     </div>
 
-    <form action="/create_subscription.php" method="POST">
+    <form action="/create_subscription.php" method="POST" class='signupform'>
         <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="pk_test_lrpNHu3jIKBoBo2ZLZ8dzzBh" data-image="images/marketplace.png" data-name="Emma's Farm CSA" data-description="Subscription for 1 weekly box" data-amount="2000"
             data-label="Sign Me Up!">
         </script>
