@@ -3,15 +3,15 @@ const Product = require("../../models/product")
 function homecontroller() {
     return {
         home: async(req, res) => {
-            // console.log('req.session', req.session)
-            // try {
-            //     const resp = await Product.find()
-            //         // console.log('resp:', resp)
-            //     res.render('pages/home', { data: resp })
-            // } catch (error) {
-            //     console.log('error:', error)
-            // }
-            res.render('pages/home', { data: '' })
+            console.log('req.session', req.session)
+            try {
+                const productresp = await Product.find()
+                    // console.log('resp:', resp)
+                return res.render('pages/home', { data: productresp })
+            } catch (error) {
+                console.log('error:', error)
+            }
+            // res.render('pages/home', { data: '' })
 
 
         },

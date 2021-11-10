@@ -23,3 +23,25 @@ const checkoutschema = new Schema({
 const Checkout = mongoose.model('Checkout', checkoutschema)
 
 module.exports = Checkout
+
+const checkoutsave = () => {
+        const newcheckout = {
+            fullname: 'pizza4',
+            email: 1,
+            address: 25,
+            city: '',
+            zip: '',
+            billingaddress: '',
+
+            // cctoken:'',
+
+        }
+
+        const checkoutdata = new Checkout(newcheckout)
+        checkoutdata.save()
+            .then(checkoutresp => {
+                console.log('product', checkoutresp)
+
+            }).catch(err => { console.log('checkoutsaveerr:', err) })
+    }
+    // checkoutsave()

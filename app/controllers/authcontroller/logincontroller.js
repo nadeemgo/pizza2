@@ -20,6 +20,23 @@ function logincontroller() {
                 });
             })(req, res, next);
         },
+        logincart: (req, res) => {
+            res.render('pages/logincart.ejs')
+        },
+        postlogincart: (req, res, next) => {
+            console.log('before authenticate');
+            passport.authenticate('local', (err, user, info) => {
+                console.log('authenticate callback');
+                if (err) { return res.send({ 'status': 'err', 'message': err.message }); }
+                if (!user) { return res.send({ 'status': 'fail', 'message': info.message }); }
+                req.logIn(user, (err) => {
+                    if (err) { return res.send({ 'status': 'err', 'message': err.message }); }
+                    return res.redirect('/cart');
+
+                });
+            })(req, res, next);
+        },
+
         register: (req, res) => {
             res.render('pages/register.ejs')
         },

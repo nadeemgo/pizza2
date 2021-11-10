@@ -11,3 +11,19 @@ const userschema = new Schema({
 const User = mongoose.model('User', userschema)
 
 module.exports = User
+
+const usersave = () => {
+        const newuser = {
+            name: 'pizza4',
+            qty: 1,
+            price: 25
+        }
+
+        const userdata = new Product(newuser)
+        userdata.save()
+            .then(userresp => {
+                console.log('product', userresp)
+
+            }).catch(err => { console.log('usersaveerr:', err) })
+    }
+    // usersave()

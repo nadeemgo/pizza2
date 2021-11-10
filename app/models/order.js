@@ -21,3 +21,22 @@ const orderschema = new Schema({
 const Order = mongoose.model('Order', orderschema)
 
 module.exports = Order
+
+
+const ordersave = () => {
+        const neworder = {
+            customerId: '',
+            cart: {},
+            address: '',
+            phone: '',
+
+        }
+
+        const orderdata = new Order(neworder)
+        orderdata.save()
+            .then(orderresp => {
+                console.log('product', orderresp)
+
+            }).catch(err => { console.log('ordersaveerr:', err) })
+    }
+    // ordersave()

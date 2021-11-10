@@ -1,0 +1,26 @@
+.nav {
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    max-height: 80px;
+}
+
+.nav img {
+    object-fit: none;
+    width: 50px;
+}
+
+.nav .linkdiv {
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    margin-left: 11px;
+}
+
+.navcontainer {
+    display: flex;
+}
+
+.navcontainer .navwrapper {
+    width: 100%;
+}
