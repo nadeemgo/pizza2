@@ -14,11 +14,11 @@
                     <h3>
                         <%= prod.name %>
                     </h3>
-                    <span>small</span>
+                    <span>special</span>
                 </div>
                 <div class='flex justify-between items-center'>
                     <span>$<%= prod.price %>.00</span>
-                    <button class='bg-gray-200 rounded px-2 py-1 ml-4'><span>+</span><span class='addtocartspan' data-product='<%= JSON.stringify(prod) %>'>Add</span></button>
+                    <button class='addtocartbutton bg-gray-200 rounded px-2 py-1 ml-4' data -product='<%= JSON.stringify(prod) %>'><span>+</span><span class='addtocartspan' data-product='<%= JSON.stringify(prod) %>'>Add</span></button>
 
                 </div>
             </div>
@@ -30,12 +30,12 @@
                         <img src='/images/pizza.jpg'>
                     </div>
                     <div>
-                        <h3>Pizza </h3>
+                        <h3>Pizza1 </h3>
                         <span>small</span>
                     </div>
                     <div class='flex justify-between items-center'>
                         <span>$20.00</span>
-                        <button><span>+</span><span>Add</span></button>
+                        <button class='addtocartbutton' data-product='<%= JSON.stringify(product) %>'><span>+</span><span  class='addtocartspan' data-product='<%= JSON.stringify(product) %>'>Add</span></button>
 
                     </div>
                 </div>
@@ -45,12 +45,12 @@
                         <img src='/images/pizza.jpg'>
                     </div>
                     <div>
-                        <h3>Pizza </h3>
-                        <span>small</span>
+                        <h3>Pizza2 </h3>
+                        <span>medium</span>
                     </div>
                     <div class='flex justify-between items-center'>
-                        <span>$20.00</span>
-                        <button><span>+</span><span>Add</span></button>
+                        <span>$25.00</span>
+                        <button class='addtocartbutton' data-product='<%= JSON.stringify(product) %>'><span>+</span><span class='addtocartspan' data-product='<%= JSON.stringify(product) %>'>Add</span></button>
 
                     </div>
                 </div>
@@ -60,12 +60,12 @@
                         <img src='/images/pizza.jpg'>
                     </div>
                     <div>
-                        <h3>Pizza </h3>
-                        <span>small</span>
+                        <h3>Pizza3 </h3>
+                        <span>Large</span>
                     </div>
                     <div class='flex justify-between items-center'>
-                        <span>$20.00</span>
-                        <button><span>+</span><span>Add</span></button>
+                        <span>$30.00</span>
+                        <button class='addtocartbutton' data-product='<%= JSON.stringify(product) %>'><span>+</span><span class='addtocartspan' data-product='<%= JSON.stringify(product) %>'>Add</span></button>
 
                     </div>
                 </div>

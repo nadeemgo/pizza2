@@ -39,11 +39,7 @@ function cartcontroller() {
                 console.log('error', error)
                 return res.redirect('/order')
             }
-
-
             console.log('orderdata', orderdata)
-
-
         },
         order: async(req, res) => {
 
@@ -82,6 +78,10 @@ function cartcontroller() {
 
             }
         },
+        deletecart: (req, res) => {
+            delete req.session.cart
+            return res.redirect('/cart')
+        }
     }
 }
 

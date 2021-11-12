@@ -6,8 +6,13 @@ function homecontroller() {
             console.log('req.session', req.session)
             try {
                 const productresp = await Product.find()
+                const newproduct = {
+                        name: 'pizza',
+                        qty: 1,
+                        price: 20
+                    }
                     // console.log('resp:', resp)
-                return res.render('pages/home', { data: productresp })
+                return res.render('pages/home', { data: productresp, product: newproduct })
             } catch (error) {
                 console.log('error:', error)
             }

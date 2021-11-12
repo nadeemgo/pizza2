@@ -1,0 +1,50 @@
+.cartheading .qty {
+    padding-left: 45px;
+}
+
+.cartvaluescontainer .cartinput {
+    width: 64px;
+    background-color: blue;
+    color: white;
+    padding: 3px 10px;
+    text-align: center;
+    line-height: 28px;
+}
+
+.cartvaluescontainer .total {
+    padding-right: 14px;
+}
+
+.cartemptycontainer {
+    width: 100%;
+}
+
+.cartemptycontainer .cartemptydiv {
+    background-color: blue;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    width: 350px;
+    text-align: center;
+}
+
+.deletecart {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.deletecart .buttondiv {
+    width: 220px;
+    margin: 20px 0;
+}
+
+.deletecart .formorderdiv {
+    width: 350px;
+}
+
+.totalamountprice {
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 20px;
+}

@@ -24,3 +24,13 @@
 .navcontainer .navwrapper {
     width: 100%;
 }
+
+.menulistcontainer li {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.menulistcontainer .cartmenu {
+    border-radius: 9px;
+    padding: 2px 14px;
+}

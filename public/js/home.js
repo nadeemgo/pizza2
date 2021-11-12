@@ -8,12 +8,20 @@ const addtocart1 = (e) => {
 
 }
 
+// var addtocartbutton = document.getElementsByClassName('addtocartbutton')
+// console.log('add to cart', addtocartbutton)
+// var i
+// for (i = 0; i < addtocartbutton.length; i++) {
+//     addtocartbutton[i].addEventListener('click', addtocart)
+// }
+
 var addtocartspan = document.getElementsByClassName('addtocartspan')
 console.log('add to cart', addtocartspan)
 var i
 for (i = 0; i < addtocartspan.length; i++) {
     addtocartspan[i].addEventListener('click', addtocart)
 }
+
 async function addtocart(e) {
     e.preventDefault()
     console.log('add to cart')

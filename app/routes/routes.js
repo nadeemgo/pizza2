@@ -23,6 +23,8 @@ function initroutes(app) {
     app.get('/orderstatus/:id', cartcontroller().orderstatus)
     app.get('/logincart', guest, logincontroller().logincart)
     app.post('/logincart', guest, logincontroller().postlogincart)
+    app.get('/deletecart', cartcontroller().deletecart)
+
 
     app.get('/admin', admincontroller().adminorder)
     app.post('/adminupdateorderstatus', admincontroller().adminupdateorderstatus)

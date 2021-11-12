@@ -1,25 +1,25 @@
-Cart Pages
+<link href='/css/cart.css' rel="stylesheet"> Cart Pages
 
 <div class='container mx-auto'>
-    <div class='flex justify-between items-center p-4 border'>
-        <div class='mr-2'>
+    <div class='cartheading flex justify-between items-center p-4 border'>
+        <!-- <div class='mr-2'>
             <img class='w-10' src='images/pizza.jpg'>
-        </div>
+        </div> -->
         <div class='flex-1'>
-            <p>name</p>
+            <p>Name</p>
         </div>
-        <div class='flex-1'>
-            <p>qty</p>
+        <div class='qty flex-1'>
+            <p>Qty</p>
         </div>
         <div class=''>
-            <p>total</p>
+            <p>Total</p>
         </div>
     </div>
     <hr class='border border-solid border-gray-300'>
     <% if(cart){ %>
         <%  for( var prod of Object.values(cart.items)) {  %>
 
-            <div class='flex justify-between items-center p-2 border'>
+            <div class='cartvaluescontainer flex justify-between items-center p-2 border '>
                 <div class='mr-2'>
                     <img class='w-10' src='images/pizza.jpg'>
                 </div>
@@ -29,60 +29,63 @@ Cart Pages
                     </p>
                 </div>
                 <div class='flex-1'>
-                    <p>
-                        <%= prod.qty %>
-                    </p>
+                    <input type='number' value='<%= prod.qty %>' class='cartinput' />
                 </div>
-                <div class=''>
-                    <p>
+                <div class=' '>
+                    <p class='total'>
                         <%= prod.price* prod.qty %>
                     </p>
                 </div>
             </div>
             <% } %>
 
-                <div class='flex justify-end mt-6 px-3'>
+                <div class='flex justify-end items-center mt-6 px-3 '>
                     <span>Total Amount: </span>
-                    <span>$<%=  cart.totalprice %></span>
+                    <span class='totalamountprice'>$<%=  cart.totalprice %></span>
                 </div>
-
-
-                <% if(user){ %>
-                    <form action='/order' method='POST'>
-                        <div class='flex flex-col justify-end items-center p-4 border mt-10 ml-auto w-1/2 bg-gray-300'>
-                            <% if(messages.error){ %>
-                                <div id='flash-order' class='bg-red-100 w-full'>
-                                    <%= messages.error  %>
-                                </div>
-                                <% } %>
-
-                                    <div class='ml-auto w-full '>
-                                        <input name='address' value="<%= messages.address %>" class='mt-4 p-2 outline-none w-full' placeholder="enter address">
+                <div class='deletecart '>
+                    <div class='buttondiv '>
+                        <a href='/deletecart '>
+                            <button class='mt-4 py-3 px-16 bg-blue-400 p-2 rounded '>Delete Cart</button>
+                        </a>
+                    </div>
+                    <% if(user){ %>
+                        <form action='/order ' method='POST '>
+                            <div class='formorderdiv flex flex-col justify-end items-center p-4 border mt-10 ml-auto w-1/2 bg-gray-300 '>
+                                <% if(messages.error){ %>
+                                    <div id='flash-order ' class='bg-red-100 w-full '>
+                                        <%= messages.error  %>
                                     </div>
-                                    <div class='ml-auto w-full'>
-                                        <input name='phone' value="<%= messages.phone %>" class='mt-4 p-2 outline-none w-full' placeholder="enter phone">
-                                    </div>
-                                    <div class='ml-auto'>
-                                        <button type='submit' class='mt-4 py-3 px-16 bg-gray-400 p-2 rounded'>Order Now</button>
-                                    </div>
-                        </div>
-                    </form>
-                    <% }else { %>
-                        <div class='flex  justify-end mt-20 ml-auto w-1/2'>
-                            <a href='/logincart'>
-                                <button class='mt-4 py-3 px-16 bg-gray-400 p-2 rounded'>Login to order</button>
-                            </a>
-                        </div>
+                                    <% } %>
 
-                        <% } %>
-                            <% }else{ %>
-                                <div class='flex  justify-end mt-20 ml-auto w-1/2'>
-                                    <a href='/'>
-                                        <button class='mt-4 py-3 px-16 bg-gray-400 p-2 rounded'>Cart is emplty </button>
-                                    </a>
-                                </div>
+                                        <div class='ml-auto w-full '>
+                                            <input name='address ' value="<%= messages.address %>" class='mt-4 p-2 outline-none w-full ' placeholder="enter address">
+                                        </div>
+                                        <div class='ml-auto w-full '>
+                                            <input name='phone ' value="<%= messages.phone %>" class='mt-4 p-2 outline-none w-full ' placeholder="enter phone">
+                                        </div>
+                                        <div class='ml-auto '>
+                                            <button type='submit ' class='mt-4 py-3 px-16 bg-blue-400 p-2 rounded '>Order Now</button>
+                                        </div>
+                            </div>
+                        </form>
+                        <% }else { %>
 
-                                <% } %>
+                            <div class='flex justify-end mt-20 ml-auto w-1/2 '>
+                                <a href='/logincart '>
+                                    <button class='mt-4 py-3 px-16 bg-blue-400 p-2 rounded '>Login to order</button>
+                                </a>
+                            </div>
+
+                            <% } %>
+                                <% }else{ %>
+                                    <div class='cartemptycontainer flex justify-center mt-20 w-1/2 '>
+
+                                        <div class=' cartemptydiv mt-4 py-3 px-16 bg-gray-400 p-2 rounded '>Cart is empty </div>
+                                    </div>
+
+                                    <% } %>
+                </div>
 
 
 </div>
